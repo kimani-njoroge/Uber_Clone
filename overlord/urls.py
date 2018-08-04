@@ -3,7 +3,8 @@ from . import views
 
 
 urlpatterns=[
-    url(r'signup/driver/',views.driver_signup,name = 'driver'),
+    url(r'signup/driver/',views.driver_signup, name = 'drive'),
+    url(r'signup/rider/', views.rider_signup, name='ride'),
 
 ]
 
