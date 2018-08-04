@@ -1,6 +1,10 @@
+from overlord.models import User
 from django.db import models
 
 # Create your models here.
+
+
+
 class Car(models.Model):
     car_brand = models.CharField(max_length=20)
     no_plate = models.CharField(max_length=25)
@@ -12,3 +16,4 @@ class Driver(models.Model):
     car = models.ForeignKey(Car)
     pickup_point = models.CharField(max_length=30)
     destination = models.CharField(max_length=30)
+    user = models.ForeignKey(User,blank=True)

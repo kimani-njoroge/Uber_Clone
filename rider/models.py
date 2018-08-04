@@ -1,3 +1,4 @@
+from overlord.models import User
 from django.db import models
 
 # Create your models here.
@@ -12,3 +13,4 @@ class Passenger(models.Model):
     location = models.ForeignKey(Location)
     pass_pick = models.CharField(max_length=40)
     id_no = models.IntegerField(default=0)
+    user = models.ForeignKey(User,blank=True)
