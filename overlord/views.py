@@ -31,4 +31,4 @@ def rider_signup(request):
            return redirect('/')
    else:
        form = RiderSignupForm()
-   return render(request, 'registration/driver_signup.html', {'form': form})
+   return render(request, 'registration/rider_signup.html', {'form': form})
