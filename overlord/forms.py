@@ -11,3 +11,11 @@ class DriverSignupForm(UserCreationForm):
    class Meta:
        model = User
        fields = ('username', 'email', 'password1', 'password2')
+
+
+class RiderSignupForm(UserCreationForm):
+   email = forms.EmailField(max_length=200, help_text='Required')
+
+   class Meta:
+       model = User
+       fields = ('username', 'email', 'password1', 'password2')

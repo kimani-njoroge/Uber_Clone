@@ -11,4 +11,4 @@ class Passenger(models.Model):
     pass_name = models.CharField(max_length=40)
     location = models.ForeignKey(Location)
     pass_pick = models.CharField(max_length=40)
-    id = models.IntegerField(default=0)
+    id_no = models.IntegerField(default=0)

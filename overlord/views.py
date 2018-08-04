@@ -14,6 +14,7 @@ def driver_signup(request):
             user.is_driver = True
             user.save()
             return redirect('/')
-        else:
-            form = DriverSignupForm()
-    return render(request,'registration/driver_signup.html',{"form":form})
+    else:
+        form = DriverSignupForm()
+    return render(request,'registration/driver_signup.html',{'form':form})
+
