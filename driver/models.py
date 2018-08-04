@@ -7,3 +7,8 @@ class Car(models.Model):
     no_seat = models.IntegerField(max_length=20)
 
 
+class Driver(models.Model):
+    driver_name = models.CharField(max_length=40)
+    car = models.ForeignKey(Car)
+    pickup_point = models.CharField(max_length=30)
+    destination = models.CharField(max_length=30)
