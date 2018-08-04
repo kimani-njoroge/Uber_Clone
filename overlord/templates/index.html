@@ -1,0 +1,9 @@
+{%extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+    <p>test index</p>
+    <a href="{% url 'drive' %}"><button class="btn btn-outline-info">Driver</button></a>
+    <a href="{% url 'ride' %}"><button class="btn btn-outline-info">Rider</button></a>
+
+{% endblock %}
