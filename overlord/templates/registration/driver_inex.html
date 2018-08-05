@@ -1,0 +1,10 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+    {% if user.is_authenticated and user.is_passenger %}
+        <p>toast</p>
+    {% else %}
+        <p>manyanga</p>
+    {% endif %}
+
+{% endblock %}
