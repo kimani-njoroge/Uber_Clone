@@ -34,3 +34,6 @@ def rider_signup(request):
    else:
        form = RiderSignupForm()
    return render(request, 'registration/rider_signup.html', {'form': form})
+
+def driver_index(request):
+    return render(request,'registration/driver_inex.html')
