@@ -3,6 +3,7 @@
 {% block content %}
     {% if user.is_authenticated and user.is_passenger %}
         <p>toast</p>
+        <a href="{% url 'newpass-lock' %}"><button class="btn btn-outline-info">create pass profile</button></a>
     {% else %}
         <p>manyanga</p>
     {% endif %}
