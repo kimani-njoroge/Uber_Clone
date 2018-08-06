@@ -7,6 +7,6 @@ class DriverProfileForm(forms.ModelForm):
         exclude = ['user']
 
 
-class CarProfile(forms.ModelForm):
+class CarProfileForm(forms.ModelForm):
     class Meta:
         model = Car

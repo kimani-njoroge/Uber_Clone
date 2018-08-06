@@ -26,4 +26,4 @@ def passlock(request):
             location.save()
     else:
         form = PassLocationForm()
-    return render(request,'profile/location.html',{"form":formg})
+    return render(request,'profile/location.html',{"form":form})
