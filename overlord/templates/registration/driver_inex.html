@@ -4,8 +4,15 @@
     {% if user.is_authenticated and user.is_passenger %}
         <p>toast</p>
         <a href="{% url 'newpass-lock' %}"><button class="btn btn-outline-info">create pass profile</button></a>
+        {% for driver in drivers %}
+            {% if passenger.pass_pick == driver.pickup_point %}
+            {{ driver.pickup_point }}
+            {{ driver.destination  }}
+            {% endif %}
+        {% endfor %}
     {% else %}
         <p>manyanga</p>
+        <a href="{% url 'newdrive-car' %}"><button class="btn btn-outline-primary">create driver profile</button></a>
     {% endif %}
 
 {% endblock %}

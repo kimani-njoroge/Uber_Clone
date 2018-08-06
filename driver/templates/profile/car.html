@@ -1,0 +1,13 @@
+{% extends 'profile/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+    <div class="container">
+        <form action="{% url 'newdrive-car' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" class="btn btn-outline-info btn-lg" value="post">
+            <input type="hidden" name="next" value="{% url 'newdrive-profile' %}">
+        </form>
+    </div>
+{% endblock %}

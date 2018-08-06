@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import DriverProfileForm,CarProfileForm
 
 # Create your views here.
+
 def driveprofile(request):
     current_user = request.user
     if request.method == 'POST':
@@ -14,6 +15,7 @@ def driveprofile(request):
         form = DriverProfileForm()
     return render(request,'profile/driverprof.html',{"form":form})
 
+
 def carprofile(request):
     current_user = request.user
     if request.method == 'POST':
@@ -24,4 +26,4 @@ def carprofile(request):
             car.save()
     else:
         form = CarProfileForm()
-    return render(request,'profile/car.html')
+    return render(request,'profile/car.html',{"form":form})
