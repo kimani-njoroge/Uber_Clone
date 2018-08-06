@@ -10,3 +10,4 @@ class DriverProfileForm(forms.ModelForm):
 class CarProfileForm(forms.ModelForm):
     class Meta:
         model = Car
+        fields = ['car_brand','no_plate','no_seat']
