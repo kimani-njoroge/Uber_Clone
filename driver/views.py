@@ -13,3 +13,15 @@ def driveprofile(request):
     else:
         form = DriverProfileForm()
     return render(request,'profile/driverprof.html',{"form":form})
+
+def carprofile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = CarProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            car = form.save(commit=False)
+            car.user = current_user
+            car.save()
+    else:
+        form = CarProfileForm()
+    return render(request,'profile/car.html')
