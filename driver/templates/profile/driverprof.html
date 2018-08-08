@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="container">
-        <form action="{% url 'newpass-profile' %}" method="post" enctype="multipart/form-data">
+        <form action="{% url 'newdrive-profile' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form form %}
             <input type="submit" class="btn btn-outline-info btn-lg" value="post">
@@ -11,3 +11,4 @@
         </form>
     </div>
 {% endblock %}
+

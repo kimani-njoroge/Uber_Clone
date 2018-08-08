@@ -1,11 +1,16 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
 from .forms import DriverSignupForm, RiderSignupForm
+from driver.models import Driver
 
 User = get_user_model()
 # Create your views here.
+
 def index(request):
     return render(request,'index.html')
+
+
 def driver_signup(request):
     if request.method == 'POST':
         form = DriverSignupForm(request.POST)
@@ -35,5 +40,10 @@ def rider_signup(request):
        form = RiderSignupForm()
    return render(request, 'registration/rider_signup.html', {'form': form})
 
+
+@login_required
 def driver_index(request):
-    return render(request,'registration/driver_inex.html')
+    drivers = Driver.objects.all()
+    user = request.user
+    # print(drivers)
+    return render(request,'registration/driver_inex.html', {"drivers":drivers, "user":user})

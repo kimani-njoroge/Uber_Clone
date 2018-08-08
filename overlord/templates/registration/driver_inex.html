@@ -1,11 +1,50 @@
-{%extends "registration/base.html"%}
+{%extends 'base.html' %}
 {% load bootstrap4 %}
+{% load static %}
 {% block content %}
+    {% block styles %}
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="{% static 'css/inex.css' %}">
+    {% endblock %}
     {% if user.is_authenticated and user.is_passenger %}
-        <p>toast</p>
-        <a href="{% url 'newpass-lock' %}"><button class="btn btn-outline-info">create pass profile</button></a>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="top">
+                    <a href="{% url 'newpass-lock' %}"><button class="btn btn-outline-info">Post Location</button></a>
+                </div>
+                <div class="info">
+                    <h4 class="pick">Driver's Pickup Point and Destination</h4>
+                    <hr>
+                    {% for driver in drivers %}
+                        <div class="row">
+
+                            {#                    {% if passenger.pass_pick == driver.pickup_point %}#}
+                            <div class="col-6">
+                                <h3>Pickup Point</h3>
+                                <hr>
+                                {{ driver.pickup_point }}
+                            </div>
+                            <div class="col-6">
+                                <h3>Destination</h3>
+                                <hr>
+                                {{ driver.destination  }}
+                            </div>
+                            {#                    {% endif %}#}
+                        </div>
+                    {% endfor %}
+                </div>
+
+
+
+            </div>
+        </div>
+
     {% else %}
         <p>manyanga</p>
+        <div class="container-fluid">
+
+        </div>
+        <a href="{% url 'newdrive-car' %}"><button class="btn btn-outline-primary">create driver profile</button></a>
     {% endif %}
 
 {% endblock %}
