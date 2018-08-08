@@ -1,0 +1,13 @@
+.contain{
+    margin: auto;
+    width: 22%;
+    border: 3px solid dodgerblue;
+    padding: 10px;
+}
+.in{
+    text-align: center;
+}
+.down{
+    margin-left: 30%;
+    padding-right: 15%;
+}

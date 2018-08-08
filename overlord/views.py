@@ -6,7 +6,7 @@ from driver.models import Driver
 
 User = get_user_model()
 # Create your views here.
-@login_required
+
 def index(request):
     return render(request,'index.html')
 

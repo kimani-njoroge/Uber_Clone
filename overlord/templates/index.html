@@ -2,8 +2,29 @@
 {% load bootstrap4 %}
 {% load static %}
 {% block content %}
-    <p>test index</p>
-    <a href="{% url 'drive' %}"><button class="btn btn-outline-info">Driver</button></a>
-    <a href="{% url 'ride' %}"><button class="btn btn-outline-info">Rider</button></a>
+        {% block styles %}
+            {% bootstrap_css %}
+            <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        {% endblock %}
+    <div class="wrapper">
+        <div class="test">
+
+
+            <div class="container">
+                <p class="text-center">Hitch A Ride</p>
+                <div class="row signup">
+
+                    <div class="col-6">
+                        <a href="{% url 'drive' %}"><button class="btn btn-outline-info homebtn1">Driver</button></a>
+                    </div>
+                    <div class="col-6">
+                        <a class="" href="{% url 'ride' %}"><button class="btn btn-outline-info homebtn">Rider</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 {% endblock %}

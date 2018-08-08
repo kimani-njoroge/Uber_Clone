@@ -1,0 +1,19 @@
+.test{
+    background-image: url(../image/test2.jpg);
+    height: 100vh;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.signup{
+    padding-top: 50%;
+}
+.homebtn{
+    padding-right: 50%;
+}
+.homebtn1{
+    padding-left: 50%;
+}
+.text-center{
+    font-size: 30px;
+}

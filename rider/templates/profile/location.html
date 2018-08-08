@@ -1,13 +1,21 @@
 {% extends 'profile/base.html' %}
 {% load bootstrap4 %}
+{% load static %}
 {% block content %}
+    {% block styles %}
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="{% static 'css/loc.css' %}">
+    {% endblock %}
 
     <div class="container">
-        <form action="{% url 'newpass-lock' %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            <input type="submit" class="btn btn-outline-info btn-lg" value="post">
-            <input type="hidden" name="next" value="{% url 'newpass-profile' %}">
-        </form>
+        <div class="loc">
+            <form action="{% url 'newpass-lock' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-outline-info btn-lg" value="post">
+                <input type="hidden" name="next" value="/new/passprofile/">
+            </form>
+        </div>
+
     </div>
 {% endblock %}

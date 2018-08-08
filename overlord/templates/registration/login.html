@@ -1,6 +1,11 @@
 {%extends "registration/base.html"%}
 {% load bootstrap4 %}
+{% load static %}
 {% block content %}
+    {% block styles %}
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    {% endblock %}
     <div class="container reg-cen">
         <div class="row">
             <!-- Empty div -->
@@ -12,8 +17,9 @@
                 <div class="card card-default">
 
                     <div class="card-heading">
-                        <h1 class="text-center my-font">Instagram</h1>
+                        <h1 class="text-center my-font">Sign In</h1>
                     </div>
+                    <hr>
                     <div class="card-body">
 
                         <form  action="/accounts/login/" method="post">
@@ -34,7 +40,7 @@
                 <br>
                 <div class="card">
                     <br>
-                    <center><p class="text-muted">Don't have an account? <a href="/accounts/signup/driver"> Sign up</a></p></center>
+                    <center><p class="text-muted">Don't have an account? <a href="/"> Sign up</a></p></center>
                 </div>
 
             </div>
